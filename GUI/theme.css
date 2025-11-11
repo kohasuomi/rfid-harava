@@ -1,0 +1,416 @@
+/* General application styling */
+QMainWindow {
+    background-color: #eeeeee; /* Subtle light gray background */
+}
+
+/* Styling for QDockWidget title bar */
+QDockWidget::title {
+    background: linear-gradient(to bottom, #4CAF50, #388E3C); /* Green gradient */
+    color: #ffffff; /* White text */
+    font-weight: bold;
+    font-size: 13px; /* Slightly smaller font */
+    padding: 6px; /* Reduced padding */
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+}
+
+/* Styling for QGroupBox elements */
+QGroupBox {
+    border: 1px solid #4CAF50; /* Thinner border for less space */
+    border-radius: 5px;
+    margin-top: 15px; /* Reduced margin */
+    background-color: #ffffff;
+    font-weight: bold;
+    font-size: 12px; /* Smaller font for titles */
+    color: #2E7D32;
+}
+
+/* Ensure group box title is compact */
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 6px;
+    background-color: transparent;
+    color: #2E7D32;
+}
+
+/* Styling for checkboxes */
+QCheckBox {
+    font-size: 12px; /* Smaller font */
+    padding: 3px; /* Reduced padding */
+    color: #333333;
+    spacing: 4px; /* Space between checkbox and text */
+}
+
+QCheckBox::indicator {
+    width: 14px; /* Smaller checkbox */
+    height: 14px;
+    border: 1px solid #4CAF50;
+    border-radius: 3px;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #4CAF50;
+    border: 1px solid #388E3C;
+}
+
+QCheckBox::indicator:unchecked {
+    background-color: #ffffff;
+}
+
+QCheckBox:disabled {
+    color: #b0b0b0;
+}
+
+QCheckBox::indicator:disabled {
+    background-color: #e0e0e0;
+    border: 1px solid #b0b0b0;
+}
+
+/* Styling for QLineEdit elements */
+QLineEdit {
+    padding: 4px; /* Reduced padding */
+    border: 1px solid #4CAF50;
+    border-radius: 3px;
+    background-color: #ffffff;
+    font-size: 12px; /* Smaller font */
+    color: #333333;
+    min-height: 24px; /* Ensure consistent height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #388E3C;
+    background-color: #f1f8e9;
+}
+
+QLineEdit:disabled {
+    background-color: #f5f5f5;
+    border: 1px solid #b0b0b0;
+    color: #b0b0b0;
+}
+
+/* Styling for QPushButton */
+QPushButton {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: 1px solid #388E3C;
+    border-radius: 4px;
+    padding: 4px 8px; /* Reduced padding */
+    font-size: 12px; /* Smaller font */
+    font-weight: normal; /* Normal weight for better fit */
+    min-width: 100px; /* Minimum width to prevent clipping */
+    text-align: center;
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+}
+
+QPushButton:pressed {
+    background-color: #388E3C;
+}
+
+QPushButton:disabled {
+    background-color: #d3d3d3;
+    color: #b0b0b0;
+    border: 1px solid #b0b0b0;
+}
+
+/* Styling for the QWidget inside QDockWidget */
+QWidget#Settings {
+    background-color: #fafafa;
+}
+
+/* Styling for QTableView */
+QTableView {
+    background-color: #ffffff;
+    gridline-color: #e0e0e0;
+    selection-background-color: #bbdefb;
+    selection-color: #000000;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    alternate-background-color: #f9f9f9;
+}
+
+/* Styling for table headers */
+QHeaderView::section {
+    background: linear-gradient(to bottom, #e0e0e0, #d3d3d3);
+    color: #333333;
+    padding: 4px; /* Reduced padding */
+    border: 1px solid #cccccc;
+    font-weight: bold;
+    font-size: 12px; /* Smaller font */
+}
+
+/* Specific styling for horizontal headers */
+QHeaderView:horizontal::section {
+    min-width: 80px; /* Minimum width for column headers */
+}
+
+/* Specific styling for vertical headers (row numbers) to make them narrower */
+QHeaderView:vertical::section {
+    min-width: 30px; /* Narrower width for the leftmost column with numbers */
+}
+
+/* Styling for table corner button */
+QTableCornerButton::section {
+    background-color: #e0e0e0;
+    border: 1px solid #cccccc;
+}
+
+
+/* Styling for QToolBar */
+QToolBar {
+    background-color: #f4f6f9;
+    border-bottom: 1px solid #e0e0e0;
+    spacing: 6px;
+}
+
+QToolBar::separator {
+    width: 1px;
+    background-color: #e0e0e0;
+}
+
+/* Styling for QAction in toolbar */
+QToolBar QToolButton {
+    background-color: transparent;
+    color: #333333;
+    padding: 4px 6px;
+    border: none;
+    font-size: 12px;
+}
+
+QToolBar QToolButton:checked {
+    background-color: #bbdefb;
+    border-radius: 3px;
+}
+
+QToolBar QToolButton:hover {
+    background-color: #e0e0e0;
+}
+
+/* Enhanced styling for the status container in the toolbar */
+QWidget#statusContainer[state="OK"] {
+    background-color: #d9f5db;  /* Matches toolbar background */
+    border: 1px solid #44e744;  /* Very soft green-gray border */
+    border-radius: 4px;
+    padding: 3px 6px;
+}
+
+QWidget#statusContainer {
+    background-color: yellow;  /* Temporary visible default */
+}
+
+QWidget#statusContainer[state="error"]{
+    background-color: #ffaea3;  /* Matches toolbar background */
+    border: 1px solid #ff0000;  /* Very soft green-gray border */
+    border-radius: 4px;
+    padding: 3px 6px;
+}
+
+
+/* Styling for API status label OK state */
+QLabel#secondLabel[state="OK"] {
+    color: #2E7D32;  /* Deep green, same as QGroupBox title */
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Styling for API status label error state */
+QLabel#secondLabel[state="error"] {
+    color: #000000;  /* Deep green, same as QGroupBox title */
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Styling for connection status label */
+#connectionStatusLabel[state="OK"] {
+    font-weight: bold;
+    padding-right: 10px;
+    color: #2E7D32;
+    font-size: 12px;
+}
+
+/* Styling for connection status label */
+#connectionStatusLabel[state="error"] {
+    font-weight: bold;
+    padding-right: 10px;
+    color: #000000;
+    font-size: 12px;
+}
+
+/* Separator — flat and soft */
+QFrame#statusSeparator {
+    background-color: #c8e6c9;  /* Gentle greenish-gray */
+    width: 1px;
+    margin: 0 6px;
+    border: none;  /* Removes any 3D or sunken effect */
+}
+
+QToolBar {
+    background-color: #f4f6f9;
+    border-bottom: 1px solid #e0e0e0;
+    spacing: 6px;
+}
+QComboBox#ipDropdown {
+    padding: 4px;
+    border: 1px solid #4CAF50;
+    border-radius: 3px;
+    background-color: #ffffff;
+    font-size: 12px;
+    color: #333333;
+    min-height: 24px;
+    min-width: 120px;
+}
+QComboBox#ipDropdown:hover {
+    background-color: #e0e0e0;
+}
+QComboBox#ipDropdown:focus {
+    border: 1px solid #388E3C;
+    background-color: #f1f8e9;
+}
+QComboBox#ipDropdown::drop-down {
+    border: none;
+    width: 20px;
+}
+QComboBox#ipDropdown::down-arrow {
+    image: url(:DropDown.png); /* Replace with actual icon if available */
+    width: 12px;
+    height: 12px;
+}
+QComboBox#ipDropdown QAbstractItemView {
+    border: 1px solid #4CAF50;
+    background-color: #ffffff;
+    selection-background-color: #bbdefb;
+    selection-color: #000000;
+    font-size: 12px;
+    color: #333333;
+}
+
+QLabel#ip_select_label {
+    color: #2E7D32;  /* Deep green, same as QGroupBox title */
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QComboBox#mode_combo {
+    padding: 4px;
+    border: 1px solid #4CAF50;
+    border-radius: 3px;
+    background-color: #ffffff;
+    font-size: 12px;
+    color: #333333;
+    min-height: 24px;
+    min-width: 120px;
+}
+QComboBox#mode_combo:hover {
+    background-color: #e0e0e0;
+}
+QComboBox#mode_combo:focus {
+    border: 1px solid #388E3C;
+    background-color: #f1f8e9;
+}
+QComboBox#mode_combo::drop-down {
+    border: none;
+    width: 20px;
+}
+QComboBox#mode_combo::down-arrow {
+    image: url(:DropDown.png); /* optional arrow icon */
+    width: 12px;
+    height: 12px;
+}
+QComboBox#mode_combo QAbstractItemView {
+    border: 1px solid #4CAF50;
+    background-color: #ffffff;
+    selection-background-color: #bbdefb;
+    selection-color: #000000;
+    font-size: 12px;
+    color: #333333;
+}
+
+/* Styling for the Mode label */
+QLabel#mode_label {
+    color: #2E7D32;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px;
+}
+
+/* Styling for the Command GroupBox (nested inside Mode group) */
+QGroupBox#command_group_box {
+    border: 1px dashed #4CAF50; /* Slightly different from solid outer box */
+    border-radius: 5px;
+    background-color: #fcfcfc;
+    font-size: 12px;
+    color: #2E7D32;
+    margin-top: 8px;
+}
+QGroupBox#command_group_box::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 6px;
+    background-color: transparent;
+    color: #2E7D32;
+    font-weight: bold;
+}
+
+/* Styling for the Command label */
+QLabel#command_label {
+    color: #2E7D32;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+/* Styling for the RadioButtons inside the Command group */
+QRadioButton {
+    font-size: 12px;
+    padding: 3px;
+    color: #333333;
+    spacing: 4px;
+}
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #4CAF50;
+    border-radius: 8px; /* rounded for radio style */
+    background-color: #ffffff;
+}
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;
+    border: 1px solid #388E3C;
+}
+QRadioButton::indicator:unchecked {
+    background-color: #ffffff;
+}
+QRadioButton:disabled {
+    color: #b0b0b0;
+}
+QRadioButton::indicator:disabled {
+    background-color: #e0e0e0;
+    border: 1px solid #b0b0b0;
+} 
+
+
+/* Optional: subtle highlight for the entire Mode group */
+QGroupBox#mode_group {
+    background-color: #ffffff;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #2E7D32;
+}
+QGroupBox#mode_group::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 6px;
+    background-color: transparent;
+    color: #2E7D32;
+}
